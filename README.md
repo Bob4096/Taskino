@@ -7,3 +7,10 @@ The Scheduler class has several member functions for managing the tasks. The add
 
 Other member functions include functions for getting the current task id, start time, and inactivity time, as well as functions for getting the index or Task struct for a specific task id. There are also functions for modifying an existing task (by id) and for getting information about the number of deadline misses (i.e., when a task misses its deadline) for a specific task or for all tasks.
 
+partial TODO list
+[] check if array of task is full
+[] avoid that tasks have same id ?
+[] check if deadline is higher than period
+[] task to execute once
+[] manage arrival time to avoid that all tasks start at the same time (spacially if their periods are multiples)
+[] make an array only with active tasks
