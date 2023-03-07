@@ -12,8 +12,8 @@ void setup() {
 
  // void addTask(unsigned long arrival_time, int priority, long period, int deadline, int id, void (*callback)());
 
-  Sched.addTask(millis(), 50, 500, 300, 1, &print1);
-  Sched.addTask(millis(), 30, 2000, 1500, 2, &print2);
+  Sched.addTask(millis(), 50, 400, 300, 1, &print);
+  Sched.addTask(millis(), 30, 2500, 1500, 2, &print);
 }
 
 void loop() {
@@ -21,10 +21,9 @@ void loop() {
   Sched.runTasks();
 }
 
-void print1(Task* t) {
- Serial.println("Task 1");
-}
 
-void print2(Task* t) {
- Serial.println("Task 2");
+void print(Task* t) {
+ int id = t->id;
+ Serial.print("Task ");
+ Serial.println(id);
 }
