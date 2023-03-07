@@ -7,44 +7,44 @@ struct Task;
 
 class Scheduler {
 public:
-  Scheduler(int numTasks, bool use_priority_scheduling);
+  Scheduler(int16_t numTasks, bool use_priority_scheduling);
   void addTask(Task task);
-  void addTask(unsigned long arrival_time, int priority, long period, int deadline, int id, void (*callback)(Task*));
-  void pauseTask(int internal_index);
-  void terminateTask(int internal_index);
+  void addTask(uint16_t32_t arrival_time, int16_t priority, uint32_t period, int16_t deadline, int16_t id, void (*callback)(Task*));
+  void pauseTask(int16_t int16_ternal_index);
+  void terminateTask(int16_t int16_ternal_index);
   void runTasks();
-  int getTaskid(void (*callback)(Task*));
-  int getTaskIndexById(int id);
-  Task getTaskById(int id);
-  void modifyTask(int id, unsigned long arrival_time, int priority, long period, int deadline, void (*callback)(Task*));
-  int getTotalNumDeadlineMisses();
-  int getNumDeadlineMissesById(int id);
-  int getCurrentTaskId();
-  int getStartTime();
-  int getInactivityTime();
+  int16_t getTaskid(void (*callback)(Task*));
+  int16_t getTaskIndexById(int16_t id);
+  Task getTaskById(int16_t id);
+  void modifyTask(int16_t id, uint16_t32_t arrival_time, int16_t priority, uint32_t period, int16_t deadline, void (*callback)(Task*));
+  int16_t getTotalNumDeadlineMisses();
+  int16_t getNumDeadlineMissesById(int16_t id);
+  int16_t getCurrentTaskId();
+  int16_t getStartTime();
+  int16_t getInactivityTime();
 private:
   Task* tasks;
-  int numTasks;
+  int16_t numTasks;
   bool use_priority_scheduling;
-  int current_task_id;
-  void init(int i);
-  int findNextTask();
-  unsigned long start_time;
-  unsigned long inactivity_time;
+  int16_t current_task_id;
+  void init(int16_t i);
+  int16_t findNextTask();
+  uint16_t32_t start_time;
+  uint16_t32_t inactivity_time;
   bool sleeping;
   bool start;
 };
 
 struct Task {
-  unsigned long arrival_time;
-  int deadline;
-  long period;
-  int priority;
-  int dmiss;
+  uint16_t32_t arrival_time;
+  int16_t deadline;
+  uint32_t period;
+  int16_t priority;
+  int16_t dmiss;
   bool paused;
   void (*callback)(Task*);
-  int internal_index;
-  int id;
+  int16_t int16_ternal_index;
+  int16_t id;
   Scheduler* scheduler;
 };
 
